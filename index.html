@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        Html CRUD with Pure JavaScript
+    </title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .bg{
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStpb7U8138T5kn1HXxZL3qZ9RYXNGimQyFKQ&usqp=CAU'); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 900px;
+          margin-top:-60px ;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg">
+        <h1 style="text-align: center;font-size:90px;">Student Details</h1>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off" style="padding-left:20px;">
+                    <div>
+                        <label><b>Student ID : </b></label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="fullName" id="fullName">
+                    </div>
+                    <div>
+                        <label><b>Student Name : </b></label>
+                        <input type="text" name="empCode" id="empCode">
+                    </div>
+                    <div>
+                        <label><b>Stream : </b></label>
+                        <input type="text" name="salary" id="salary">
+                    </div>
+                    <div>
+                        <label><b>Marks : </b></label>
+                        <input type="text" name="city" id="city">
+                    </div>
+                    <div  class="form-action-buttons">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <td style="padding-left: 90px;">
+
+                <input type="text" name="input1" id="myInput"  placeholder="Search by StudentId">
+                <input type="text" name="input2" id="myInput1" placeholder="Search by Name" >
+                <input type="text" name="input3" id="myInput2" placeholder="Search by Stream" >
+                <input type="text" name="input4" id="myInput3" placeholder="Search by Marks"><br>
+                 <button type="submit" onclick="searchFunByid()">Submit</button>   
+                <button type="reset" onclick="document.getElementById('myInput').value = '';
+                document.getElementById('myInput1').value = '';
+                document.getElementById('myInput2').value = '';
+                document.getElementById('myInput3').value = '';
+                resetSearch()" name="clear1">Clear</button><br><br>
+
+
+
+                <table class="list" id="employeeList" >
+                    <thead>
+                        <tr>
+                            <th>Student Id &nbsp;&nbsp; </th>
+                            <th>Student Name &nbsp;&nbsp;</th>
+                            <th>Stream &nbsp;&nbsp;</th>
+                            <th>Marks &nbsp;&nbsp;</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script src="script.js"></script>
+</body>
+</div>
+</html>
